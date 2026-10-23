@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeria</title>
 
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 30px;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: clamp(24px, 5vw, 42px);
+      font-weight: 400;
+      margin: 0;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .back {
+      opacity: .75;
+    }
+
+    .back:hover {
+      opacity: 1;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      transition: opacity .2s, transform .2s;
+    }
+
+    .gallery a:hover img {
+      opacity: .8;
+      transform: scale(1.01);
+    }
+
+    @media (max-width: 500px) {
+      body { padding: 18px; }
+      .gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Galeria</h1>
+    <a class="back" href="index.html">← Voltar</a>
+  </header>
+
+  <main class="gallery">
+    <a href="foto1.jpg" target="_blank">
+      <img src="foto1.jpg" alt="Fotografia 1">
+    </a>
+    <a href="foto2.jpg" target="_blank">
+      <img src="foto2.jpg" alt="Fotografia 2">
+    </a>
+    <a href="foto3.jpg" target="_blank">
+      <img src="foto3.jpg" alt="Fotografia 3">
+    </a>
+    <a href="foto4.jpg" target="_blank">
+      <img src="foto4.jpg" alt="Fotografia 4">
+    </a>
+  </main>
+</body>
+</html>
